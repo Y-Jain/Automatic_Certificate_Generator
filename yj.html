@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('bg.jpeg') repeat;
+            background-size: cover;
+            animation: moveBackground 20s linear infinite;
+            z-index: -1;
+        }
+        @keyframes moveBackground {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            margin-top: 100px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SVVV Certificate Generator</a>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Certificate Generator</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/generate" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Recipient Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter the recipient's name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="language" class="form-label">Programming Language</label>
+                                <input type="text" class="form-control" id="language" name="language" placeholder="e.g., Python, Java" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="template" class="form-label">Certificate Template</label>
+                                <input type="file" class="form-control" id="template" name="template" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Generate Certificate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 SVVV Certificate Generator</h1>
+            <p>Generate certificates and email them Effortlessly</p>
+        </header>
+
+        <main>
+            <!-- Certificate Generation Form -->
+            <section class="form-section">
+                <h2>Generate Certificate</h2>
+                <form action="{{ url_for('generate_certificate') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Enter recipient's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Enter recipient's email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Programming Language:</label>
+                        <input type="text" name="language" id="language" placeholder="e.g., Python, Java" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="template">Certificate Template:</label>
+                        <input type="file" name="template" id="template" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn">Generate Certificate</button>
+                </form>
+            </section>
+
+            <!-- Send Emails -->
+            <section class="action-section">
+                <h2>Send Certificates</h2>
+                <form action="{{ url_for('send_emails') }}" method="post">
+                    <button type="submit" class="btn secondary">Send Certificates</button>
+                </form>
+            </section>
+
+            <!-- Dynamic Message Display -->
+            {% if message %}
+                <div class="message">
+                    {{ message }}
+                </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
+

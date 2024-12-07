@@ -1,0 +1,106 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the app */
+.container {
+    max-width: 800px;
+    width: 90%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Form and Sections */
+main {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.form-section, .action-section {
+    margin-bottom: 30px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn.secondary {
+    background-color: #2196F3;
+}
+
+.btn.secondary:hover {
+    background-color: #1976D2;
+}
+
+/* Message Display */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-left: 5px solid #4CAF50;
+    font-size: 1rem;
+}
